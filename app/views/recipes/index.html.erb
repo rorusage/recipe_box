@@ -1,1 +1,6 @@
-<h1>Hello</h1>
+<div class="col-md-12">
+  <% @recipes.map do |recipe| %>
+    <h3><%= recipe.title %></h3>
+
+  <% end %>
+</div>
