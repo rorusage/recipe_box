@@ -16,4 +16,5 @@
 //= require bootstrap/alert
 //= require turbolinks
 //= require_tree .
+//= require cocoon
 

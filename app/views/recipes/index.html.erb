@@ -1,6 +1,6 @@
 <div class="col-md-12">
   <% @recipes.map do |recipe| %>
-    <h3><%= recipe.title %></h3>
+    <h3><%= link_to(recipe.title, recipe_path(recipe)) %></h3>
 
   <% end %>
 </div>
