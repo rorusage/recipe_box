@@ -1,0 +1,15 @@
+<div class="col-md-12">
+  <h1><%= @recipe.title %></h1>
+  <h3><%= @recipe.content %></h3>
+  <hr>
+
+  <h3>Ingredients</h3>
+  <% @recipe.ingredients.each do |i| %>
+    <h5><%= i.name %> : <%= i.amount %></h5>
+  <% end %>
+
+  <h3>Steps</h3>
+  <% @recipe.steps.each do |s| %>
+    <h5><%= s.step_order %>. <%= s.content %></h5>
+  <% end %>
+</div>
