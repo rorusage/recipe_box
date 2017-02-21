@@ -1,6 +1,9 @@
 <div class="col-md-12">
   <% @recipes.map do |recipe| %>
     <h3><%= link_to(recipe.title, recipe_path(recipe)) %></h3>
+    <%= link_to("edit", edit_recipe_path(recipe), class: "btn btn-info")%>
+    <%= link_to("Destroy", recipe_path(recipe), class: "btn btn-danger",
+                method: :delete, data: {confirm: "Are you sure?"})%>
 
   <% end %>
 </div>
