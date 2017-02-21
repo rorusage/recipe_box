@@ -1,6 +1,8 @@
 <div class="col-md-12">
   <div class="group">
-    <%= link_to("Edit", edit_recipe_path(@recipe), class: "btn btn-primary pull-right") %>
+    <% if @recipe.editable_by?(current_user) %>
+      <%= link_to("Edit", edit_recipe_path(@recipe), class: "btn btn-primary pull-right") %>
+    <% end %>
   </div>
   <h1><%= @recipe.title %></h1>
   <h3><%= @recipe.content %></h3>
