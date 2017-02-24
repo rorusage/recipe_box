@@ -19,9 +19,9 @@
   <% end %>
 
   <hr>
-  <h2>Comments:</h2><%= link_to("Add Comment", new_recipe_comment_path(@recipe), class: "btn btn-primary")%>
+  <h2>Comments:</h2>
   <% @comments.each do |comment|%>
     <h4><%= comment.name %> written:</h4><h4><%= comment.content %></h4>
   <% end %>
-
+  <%= render "comments/comment" %>
 </div>
