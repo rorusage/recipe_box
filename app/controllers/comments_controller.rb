@@ -10,6 +10,13 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @recipe = Recipe.find(params[:recipe_id])
+    @comment = @recipe.comments.find(params[:id])
+    @comment.destroy
+    redirect_to recipe_path(@recipe), alert: "評論已刪除！"
+  end
+
   private
 
   def comment_params
