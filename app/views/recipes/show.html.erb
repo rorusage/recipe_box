@@ -17,4 +17,11 @@
   <% @recipe.steps.each do |s| %>
     <h5><%= s.step_order %>. <%= s.content %></h5>
   <% end %>
+
+  <hr>
+  <h2>Comments:</h2><%= link_to("Add Comment", new_recipe_comment_path(@recipe), class: "btn btn-primary")%>
+  <% @comments.each do |comment|%>
+    <h4><%= comment.name %> written:</h4><h4><%= comment.content %></h4>
+  <% end %>
+
 </div>
