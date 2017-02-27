@@ -4,6 +4,11 @@
       <%= link_to("Edit", edit_recipe_path(@recipe), class: "btn btn-primary pull-right") %>
     <% end %>
   </div>
+
+  <% @recipe.photos.each do |p| %>
+    <%= image_tag p.image_url.to_s %>
+  <% end %>
+
   <h1><%= @recipe.title %></h1>
   <h3><%= @recipe.content %></h3>
   <hr>

@@ -10,6 +10,9 @@ class Recipe < ActiveRecord::Base
 
   has_many :comments, :dependent => :destroy
 
+  has_many :photos, dependent: :destroy
+  accepts_nested_attributes_for :photos, reject_if: :all_blank, allow_destroy: true
+
 
   def editable_by?(user)
     user == owner

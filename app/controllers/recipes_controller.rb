@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
     @recipe.ingredients.build
     @recipe.steps.build
+    @photo = @recipe.photos.new
   end
 
   def create
@@ -51,7 +52,8 @@ class RecipesController < ApplicationController
   def recipe_ingredient_step_params
     params.require(:recipe).permit(:title, :content,
                                    ingredients_attributes: [:id, :name, :amount, :_destroy],
-                                   steps_attributes: [:id, :step_order, :content, :_destroy])
+                                   steps_attributes: [:id, :step_order, :content, :_destroy],
+                                   photos_attributes: [:image, :remote_image_url])
 
   end
 end
