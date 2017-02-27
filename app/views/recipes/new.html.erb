@@ -4,9 +4,11 @@
     <div class="form-group">
       <div id="photos">
         <%= f.simple_fields_for :photos do |photo| %>
-          <%= photo.input :image, as: :file %>
-          <%= photo.input :remote_image_url %>
+          <%= render 'photo_fields', :f => photo %>
         <% end %>
+        <div class="links">
+          <%= link_to_add_association 'Add_Photo', f, :photos, class: "btn btn-info" %>
+        </div>
       </div>
 
       <%= f.input :title, input_html: {class: "form-control"} %>
