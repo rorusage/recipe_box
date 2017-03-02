@@ -1,8 +1,9 @@
 <div class="col-md-12">
+  <h1>My Recipes</h1>
   <% @recipes.map do |recipe| %>
     <h3><%= link_to(recipe.title, recipe_path(recipe)) %></h3>
     <% recipe.photos.each do |p| %>
-      <%= image_tag p.image.thumb.url.to_s %>
+      <%= image_tag p.image_url.to_s %>
     <% end %>
     <% if recipe.editable_by?(current_user) %>
       <%= link_to("edit", edit_recipe_path(recipe), class: "btn btn-info")%>

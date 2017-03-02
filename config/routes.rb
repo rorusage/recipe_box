@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :comments
   end
+  namespace :account do
+    resources :recipes
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

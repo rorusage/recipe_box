@@ -1,5 +1,10 @@
 <div class="nested-fields">
-  <%= f.input :step_order %>
-  <%= f.input :content %>
-  <%= link_to_remove_association "Remove step", f, class: "btn btn-danger pull-right" %>
+  <% if f.object.step_order? %>
+    <%= f.input :step_order %>
+    <%= f.input :content %>
+    <%= link_to_remove_association "Remove step", f, class: "btn btn-danger pull-right" %>
+  <% else %>
+    <%= f.input :step_order %>
+    <%= f.input :content %>
+  <% end %>
 </div>

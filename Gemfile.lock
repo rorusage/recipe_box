@@ -172,7 +172,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   byebug
-  carrierwave
+  carrierwave (~> 1.0)
   cocoon (> 1.2.0)
   coffee-rails (~> 4.1.0)
   devise (~> 4.0.0)

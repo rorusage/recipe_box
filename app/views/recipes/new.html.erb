@@ -2,6 +2,7 @@
    <h1 class="text-center">Add new recipe</h1>
    <%= simple_form_for @recipe do |f|%>
     <div class="form-group">
+      <h3>Photos</h3>
       <div id="photos">
         <%= f.simple_fields_for :photos do |photo| %>
           <%= render 'photo_fields', :f => photo %>

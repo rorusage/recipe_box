@@ -6,7 +6,7 @@
   </div>
 
   <% @recipe.photos.each do |p| %>
-    <%= image_tag p.image_url.to_s %>
+    <%= image_tag p.image.thumb.url.to_s %>
   <% end %>
 
   <h1><%= @recipe.title %></h1>

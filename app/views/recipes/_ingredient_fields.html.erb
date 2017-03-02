@@ -1,6 +1,11 @@
 <div class="nested-fields">
-  <%= f.input :name %>
-  <%= f.input :amount %>
-  <%= link_to_remove_association "Remove Ingredient", f, class: "btn btn-danger pull-right"%>
+  <% if f.object.name? %>
+    <%= f.input :name %>
+    <%= f.input :amount %>
+    <%= link_to_remove_association "Remove Ingredient", f, class: "btn btn-danger pull-right"%>
+  <% else %>
+    <%= f.input :name %>
+    <%= f.input :amount %>
+  <% end %>
 </div>
 
